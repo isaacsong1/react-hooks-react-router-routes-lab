@@ -1,14 +1,19 @@
 import { actors } from "../data";
+import Card from '../components/Card';
+import NavBar from '../components/NavBar';
 
 
 function Actors() {
+  const mappedActors = actors.map(actor => <Card key={actor.name} name={actor.name} movies={actor.movies} />)
+
   return (
     <>
       <header>
-        {/* What component should go here? */}
+        <NavBar />
       </header>
       <main>
-        {/* Actor info here! */}
+        <h1>Actors Page</h1>
+        {mappedActors}
       </main>
     </>
   );
